@@ -28,7 +28,7 @@ def loadgraph(textfile, nodes_num = 875714):
     1 has an outgoing edge to the vertex with label 4.
     """
     graph, graph_reversed = {}, {}
-    for dummy_node in range(1, nodes_num + 1):
+    for dummy_node in xrange(1, nodes_num + 1):
         graph[dummy_node], graph_reversed[dummy_node] = [], []
     opened = open(graph_file)
     for dummy_line in opened:
@@ -45,7 +45,7 @@ def dfs_order(graph):
     finishing time.
     """
     nodes_num = len(graph.keys())
-    explored = {dummy: 0 for dummy in range(1, nodes_num + 1)}
+    explored = {dummy: 0 for dummy in xrange(1, nodes_num + 1)}
     ftime = 0
     order = deque([])
     magic_order = {}
@@ -79,7 +79,7 @@ def dfs_leaders(graph, order):
     list will look like that: [8, 8, 8, 9, 9, 9, 7, 7, 7].
     """
     nodes_num = len(graph.keys())
-    explored = {dummy: 0 for dummy in range(1, nodes_num + 1)}
+    explored = {dummy: 0 for dummy in xrange(1, nodes_num + 1)}
     leaders = []
     nodegetter = len(order.keys())
     while nodegetter > 0:
@@ -134,4 +134,3 @@ if __name__ == "__main__":
     print "************************** Test case no. 1 **************************"
     graph_file = "scc_test_1.txt"  # should return  [(8, 3), (9, 3), (7, 3)]
     scc(graph_file, 9)
-    

@@ -13,7 +13,7 @@ def partition(inp, beginning, end):
         return inp
     pivot = inp[end-1]
     index = beginning - 1
-    for dummy_index in range(beginning, end-1):
+    for dummy_index in xrange(beginning, end-1):
         if inp[dummy_index] <= pivot:
             index += 1
             if dummy_index != index:
@@ -32,7 +32,7 @@ def quick_sort(inp, beginning, end):
 # Some tests:
 dummy_range = 100
 # Creating unordered list of integers in given range to be sorted by quick_sort.
-qs_inp = [dummy_num for dummy_num in range(dummy_range)]
+qs_inp = range(dummy_range)
 random.shuffle(qs_inp)
 #Making a copy of unordered list to be sorted by Python to check quick_sort correctnes.
 py_inp = qs_inp[:]

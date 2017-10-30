@@ -29,7 +29,7 @@ def select_activity(tasks):
     problem_size = len(tasks)
     scheduled = set([tasks[0]])
     recent = 1
-    for subproblem in range(2, problem_size):
+    for subproblem in xrange(2, problem_size):
         if tasks[subproblem][0] >= tasks[recent][1]:
             scheduled.add(tasks[subproblem])
             recent = subproblem

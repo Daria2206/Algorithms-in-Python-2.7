@@ -42,7 +42,7 @@ def kruskal(unsorted_graph):
     diset = DSets()
     graph = sorted(unsorted_graph, key=lambda weight: weight[2])
     vertices_num = len(graph)
-    for vertex in range(vertices_num):
+    for vertex in xrange(vertices_num):
         diset.makeset(vertex)
     for edge in graph:
         if diset.findset(edge[0]) != diset.findset(edge[1]):
